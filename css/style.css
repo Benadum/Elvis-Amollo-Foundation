@@ -472,3 +472,113 @@ footer { background: #1a1a1a; color: #fff; padding-top: 60px; }
     margin: 0;
     line-height: 1.4;
 }
+
+/* --- Hero Carousel Styles --- */
+.hero-carousel {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 1s ease-in-out; /* Smooth fade effect */
+    z-index: 1;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Nav Buttons */
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    background: #27ae60;
+}
+
+.carousel-prev { left: 20px; }
+.carousel-next { right: 20px; }
+
+/* Dots Navigation */
+.carousel-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #27ae60;
+    width: 30px; /* Stretches the active dot slightly */
+    border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 2.2rem; }
+    .carousel-prev, .carousel-next { display: none; } /* Hide arrows on mobile for cleaner look */
+}
+
+.infintech-link {
+    color: #27ae60; /* Matches your EAF Green */
+    text-decoration: none; /* Removes the underline */
+    font-weight: 700;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.infintech-link:hover {
+    color: #ffffff; /* Turns white when hovered */
+    transform: scale(1.05); /* Slight grow effect */
+    text-shadow: 0 0 8px rgba(39, 174, 96, 0.6); /* Subtle glow */
+}

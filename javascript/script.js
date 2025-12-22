@@ -131,3 +131,67 @@ document.addEventListener('DOMContentLoaded', () => {
     closeBtn.addEventListener('click', closeLightbox);
     lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
 });
+
+// --- HERO CAROUSEL LOGIC ---
+const slides = document.querySelectorAll('.carousel-slide');
+const dots = document.querySelectorAll('.dot');
+const prevBtn = document.querySelector('.carousel-prev');
+const nextBtn = document.querySelector('.carousel-next');
+
+let currentSlide = 0;
+let slideInterval;
+
+const showSlide = (index) => {
+    // Reset classes
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    // Set new active slide
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+    currentSlide = index;
+};
+
+const nextSlide = () => {
+    let index = (currentSlide + 1) % slides.length;
+    showSlide(index);
+};
+
+const prevSlide = () => {
+    let index = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(index);
+};
+
+// Auto-play timer
+const startAutoPlay = () => {
+    slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+};
+
+const stopAutoPlay = () => {
+    clearInterval(slideInterval);
+};
+
+// Event Listeners for Manual Controls
+nextBtn.addEventListener('click', () => {
+    stopAutoPlay();
+    nextSlide();
+    startAutoPlay();
+});
+
+prevBtn.addEventListener('click', () => {
+    stopAutoPlay();
+    prevSlide();
+    startAutoPlay();
+});
+
+// Dot Navigation
+dots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => {
+        stopAutoPlay();
+        showSlide(idx);
+        startAutoPlay();
+    });
+});
+
+// Start the carousel
+startAutoPlay();

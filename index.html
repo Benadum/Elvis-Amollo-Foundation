@@ -37,14 +37,46 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+   <!-- Hero Carousel Section -->
+<section id="home" class="hero-carousel">
+    <!-- Slide 1 -->
+    <div class="carousel-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/sports1.jpeg');">
         <div class="hero-content">
             <h1>Elvis Amollo Foundation</h1>
             <p>Empowering communities through education and social welfare.</p>
             <a href="#about" class="btn-main">Learn Our Story</a>
         </div>
-    </section>
+    </div>
+
+    <!-- Slide 2: Sportsmanship -->
+    <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/sports2.jpeg');">
+        <div class="hero-content">
+            <h1>Youth Sportsmanship</h1>
+            <p>Mentoring the next generation of leaders through athletics.</p>
+            <a href="#initiatives" class="btn-main">View Our Projects</a>
+        </div>
+    </div>
+
+    <!-- Slide 3: Elderly Care -->
+    <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/projects2.jpeg');">
+        <div class="hero-content">
+            <h1>Care for the Elderly</h1>
+            <p>Providing nutrition and companionship to our community pillars.</p>
+            <a href="#initiatives" class="btn-main">Support a Senior</a>
+        </div>
+    </div>
+
+    <!-- Carousel Nav Arrows -->
+    <button class="carousel-prev">❮</button>
+    <button class="carousel-next">❯</button>
+
+    <!-- Carousel Dots -->
+    <div class="carousel-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</section>
 
     <!-- About Section -->
     <section id="about" class="container">
@@ -288,8 +320,12 @@
 </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2025 Elvis Keith Amollo Foundation | Built for Impact</p>
-    </div>
+    <p>
+        &copy; 2025 Elvis Keith Amollo Foundation | Powered by 
+        <!-- Replace your-email@gmail.com with your actual Gmail address -->
+        <a href="mailto:infintech@osakenya.org" class="infintech-link">INFINTECH</a>
+    </p>
+</div>
 </footer>
     <!-- JS link -->
     <script src="javascript/script.js"></script>
