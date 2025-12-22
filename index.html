@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -107,25 +109,49 @@
     </div>
 </section>
 
-<!-- IMPACT STATS SECTION -->
-<section class="stats-section bg-dark">
-    <div class="container stats-grid">
-        <div class="stat-item">
-            <h3 class="counter" data-target="200">0</h3>
-            <p>People Impacted</p>
+<!-- EAF IMPACT SECTION -->
+<section class="impact-section">
+    <div class="container impact-wrapper">
+        
+        <!-- Card 1: General Impact -->
+        <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-users"></i></div>
+            <h3 class="counter" data-target="20">0</h3>
+            <p>Total Beneficiaries Impacted</p>
         </div>
-        <div class="stat-item">
-            <h3 class="counter" data-target="1">0</h3>
-            <p>Active Volunteers</p>
+
+        <!-- Card 2: Education -->
+        <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-graduation-cap"></i></div>
+            <h3 class="counter" data-target="150">0</h3>
+            <p>Scholarships & Education Grants</p>
         </div>
-        <div class="stat-item">
+
+        <!-- Card 3: Elderly Support (Meals) -->
+<div class="impact-card">
+    <!-- 1. Ensure this ICON line is present -->
+    <div class="impact-icon"><i class="fas fa-bowl-food"></i></div> 
+    
+    <!-- 2. Change data-target to 5000 to match your actual impact -->
+    <h3 class="counter" data-target="100">0</h3>
+    
+    <p>Meals Provided To The Elderly</p>
+</div>
+
+        <!-- Card 4: Projects -->
+        <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-list-check"></i></div>
             <h3 class="counter" data-target="12">0</h3>
-            <p>Ongoing Projects</p>
+            <p>Active Community Projects</p>
         </div>
-        <div class="stat-item">
+
+        <!-- Card 5: Sportsmanship/Youth -->
+        <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-running"></i></div>
             <h3 class="counter" data-target="100">0</h3>
-            <p>Meals Shared</p>
+            <p>Youth Engaged in Sports</p>
         </div>
+
     </div>
 </section>
 
@@ -197,16 +223,74 @@
     </div>
 </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="container">
-        <h2>Contact Us</h2>
-        <p>Email: info@eafoundation.org</p>
-    </section>
+  <!-- PARTNERS SECTION (Logo Slider)
+<section class="partners container">
+    <h3 class="small-title">Our Partners & Supporters</h3>
+    <div class="logo-track">
+        <img src="images/partner1.png" alt="Partner">
+        <img src="images/partner2.png" alt="Partner">
+        <img src="images/partner3.png" alt="Partner">
+        <img src="images/partner4.png" alt="Partner">
+    </div>
+</section> -->
 
-    <footer>
-        <p>&copy; 2025 Elvis Amollo Foundation (EAF)</p>
-    </footer>
+<!-- TESTIMONIALS SECTION -->
+<section class="testimonials bg-light">
+    <div class="container">
+        <h2>Impact Stories</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"The EAF sports program gave my son a sense of purpose and a community he never had before."</p>
+                <h4>- Parent of Beneficiary</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"I was struggling to get my daily meals until EAF stepped in. They are a blessing to us elderly."</p>
+                <h4>- Community Elder</h4>
+            </div>
+        </div>
+    </div>
+</section>
 
+<!-- BACK TO TOP BUTTON -->
+<button id="backToTop" title="Go to top">↑</button>
+
+<!-- ENHANCED FOOTER -->
+<footer>
+    <div class="footer-grid container">
+        <div class="footer-about">
+            <div class="logo-text">EAF <span>Foundation</span></div>
+            <p>Empowering communities for a brighter, more sustainable future.</p>
+        </div>
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#initiatives">Initiatives</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+    <h4>Follow Our Impact</h4>
+    <div class="social-links">
+        <a href="#" class="social-icon" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="social-icon" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="social-icon" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="social-icon" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+    </div>
+</div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Elvis Keith Amollo Foundation | Built for Impact</p>
+    </div>
+</footer>
     <!-- JS link -->
     <script src="javascript/script.js"></script>
 </body>

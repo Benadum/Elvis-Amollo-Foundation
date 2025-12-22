@@ -1,129 +1,133 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+    // --- 1. NAVIGATION & HEADER ---
     const menuToggle = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
     const logoBtn = document.getElementById('logo-btn');
+    const header = document.getElementById('navbar-header');
+    const backBtn = document.getElementById("backToTop");
 
-    // 1. LOGO ON-CLICK: Scroll to top
-    logoBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-        // Close mobile menu if open
-        navLinks.classList.remove('active');
-    });
-
-    // 2. MOBILE MENU: Toggle open/close
+    // Toggle Mobile Menu
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('is-active');
     });
 
-    // 3. NAV LINKS: Smooth Scroll and Close Menu
+    // Smooth Scroll to Top via Logo
+    logoBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('is-active');
+    });
+
+    // Close mobile menu when any nav link is clicked
     document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            const targetId = link.getAttribute('href');
-            if(targetId.startsWith("#")) {
-                navLinks.classList.remove('active');
-            }
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('is-active');
         });
     });
 
-    // 4. NAVBAR SCROLL EFFECT: Shrink header on scroll
-    window.addEventListener('scroll', () => {
-        const header = document.getElementById('navbar-header');
-        if (window.scrollY > 100) {
+    // --- 2. SCROLL-BASED EFFECTS (Header, Back-to-Top, Reveal) ---
+    const reveals = document.querySelectorAll(".reveal");
+
+    const handleScrollEffects = () => {
+        const scrollY = window.scrollY;
+
+        // Header Shrink Effect
+        if (scrollY > 100) {
             header.style.padding = '5px 0';
             header.style.background = '#fcfcfc';
         } else {
             header.style.padding = '15px 0';
             header.style.background = '#fff';
         }
-    });
-});
 
+        // Back-to-Top Button Visibility
+        backBtn.style.display = (scrollY > 300) ? "block" : "none";
 
-const counters = document.querySelectorAll('.counter');
-    const speed = 200; // The higher the slower
+        // Reveal Animations
+        reveals.forEach(reveal => {
+            const elementTop = reveal.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            if (elementTop < windowHeight - 150) {
+                reveal.classList.add("active");
+            }
+        });
+    };
 
-    const animateCounters = () => {
+    window.addEventListener("scroll", handleScrollEffects);
+    backBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    handleScrollEffects(); // Run once on load
+
+    // --- 3. IMPACT COUNTER (Intersection Observer) ---
+    const countImpact = () => {
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
         counters.forEach(counter => {
             const updateCount = () => {
                 const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
+                const count = +counter.innerText.replace(/,/g, '');
                 const inc = target / speed;
 
                 if (count < target) {
-                    counter.innerText = Math.ceil(count + inc);
-                    setTimeout(updateCount, 1);
+                    counter.innerText = Math.ceil(count + inc).toLocaleString();
+                    setTimeout(updateCount, 15);
                 } else {
-                    counter.innerText = target + "+";
+                    counter.innerText = target.toLocaleString() + (target > 10 ? "+" : ""); 
                 }
             };
             updateCount();
         });
     };
 
-    // Trigger counter when it enters the viewport
-    const statsSection = document.querySelector('.stats-section');
-    let counted = false;
-
-    window.addEventListener('scroll', () => {
-        if (!statsSection) return;
-        const sectionPos = statsSection.getBoundingClientRect().top;
-        const screenPos = window.innerHeight;
-
-        if (sectionPos < screenPos && !counted) {
-            animateCounters();
-            counted = true;
-        }
-    });
- const filterButtons = document.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove active class from all buttons and add to clicked
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-
-            const filterValue = button.getAttribute('data-filter');
-
-            galleryItems.forEach(item => {
-                if (filterValue === 'all' || item.classList.contains(filterValue)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
+    const impactSection = document.querySelector('.impact-section');
+    if (impactSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    countImpact();
+                    observer.unobserve(entry.target);
                 }
             });
-        });
-    });
+        }, { threshold: 0.5 });
+        observer.observe(impactSection);
+    }
 
-    // --- LIGHTBOX LOGIC ---
+    // --- 4. GALLERY & LIGHTBOX ---
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxCaption = document.getElementById('lightbox-caption');
     const closeBtn = document.querySelector('.close-lightbox');
 
-    galleryItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const imgSrc = item.querySelector('img').src;
-            const caption = item.querySelector('img').alt;
-            
-            lightbox.style.display = 'flex';
-            lightboxImg.src = imgSrc;
-            lightboxCaption.innerText = caption;
+    // Gallery Filtering
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const filterValue = button.getAttribute('data-filter');
+            galleryItems.forEach(item => {
+                item.style.display = (filterValue === 'all' || item.classList.contains(filterValue)) ? 'block' : 'none';
+            });
         });
     });
 
-    closeBtn.addEventListener('click', () => {
-        lightbox.style.display = 'none';
+    // Lightbox Open
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            lightboxImg.src = img.src;
+            lightboxCaption.innerText = img.alt;
+            lightbox.style.display = 'flex';
+        });
     });
 
-    // Close lightbox when clicking outside the image
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            lightbox.style.display = 'none';
-        }
-    });
+    // Lightbox Close
+    const closeLightbox = () => lightbox.style.display = 'none';
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+});
