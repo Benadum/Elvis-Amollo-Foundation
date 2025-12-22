@@ -38,7 +38,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Elvis Keith Amollo Foundation</h1>
+            <h1>Elvis Amollo Foundation</h1>
             <p>Empowering communities through education and social welfare.</p>
             <a href="#about" class="btn-main">Learn Our Story</a>
         </div>
@@ -47,8 +47,143 @@
     <!-- About Section -->
     <section id="about" class="container">
         <h2>About EAF</h2>
-        <p>The Elvis Keith Amollo Foundation (EAF) focuses on creating sustainable development through strategic community interventions.</p>
+        <p>The Elvis Amollo Foundation (EAF) focuses on creating sustainable development through strategic community interventions.</p>
     </section>
+
+    <!-- Programs Grid -->
+    <section id="programs" class="bg-light">
+        <div class="container">
+            <h2>Our Programs</h2>
+            <div class="grid">
+                <div class="card"><h3>Sportsmanship</h3><p>Tournaments and Local games like draft.</p></div>
+                <div class="card"><h3>Elderly Support Programme</h3><p>Basic needs, Especially shelter to the elderly</p></div>
+                <div class="card"><h3>Youth</h3><p>Mentorship and skill building.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ... Previous Header and Hero Sections ... -->
+
+<!-- WHAT WE DO SECTION (ZIGZAG DESIGN) -->
+<section id="initiatives" class="container">
+    <h2 class="section-title">Our Focus Areas</h2>
+
+    <!-- Section 1: Sportsmanship -->
+    <div class="zigzag">
+        <div class="zigzag-img">
+            <img src="images/sports2.jpeg" alt="Sportsmanship">
+        </div>
+        <div class="zigzag-text">
+            <span>01. Athletics & Leadership</span>
+            <h3>Youth Sportsmanship</h3>
+            <p>We believe that the field of play is the greatest classroom for life. Through our sports programs, we mentor young athletes not just to win, but to lead with integrity, teamwork, and discipline. By providing equipment and professional coaching, we keep youth engaged and healthy.</p>
+            <div class="active-projects">
+                <strong>Active Projects:</strong>
+                <ul>
+                    <li>Annual EAF Peace Tournament</li>
+                    <li>Community Sports Equipment Drive</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Helping the Elderly -->
+    <div class="zigzag reverse">
+        <div class="zigzag-img">
+            <img src="images/projects1.jpeg" alt="Elderly Support">
+        </div>
+        <div class="zigzag-text">
+            <span>02. Compassionate Care</span>
+            <h3>Supporting the Elderly</h3>
+            <p>Our elders are the pillars of our community, yet they are often the most vulnerable. EAF provides direct support to the elderly through nutritional programs, home visits, and health check-ups. We ensure that no senior citizen in our reach feels forgotten or abandoned.</p>
+            <div class="active-projects">
+                <strong>Active Projects:</strong>
+                <ul>
+                    <li>Building Houses for the elderly</li>
+                    <li>Senior Health & Wellness Camps</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- IMPACT STATS SECTION -->
+<section class="stats-section bg-dark">
+    <div class="container stats-grid">
+        <div class="stat-item">
+            <h3 class="counter" data-target="200">0</h3>
+            <p>People Impacted</p>
+        </div>
+        <div class="stat-item">
+            <h3 class="counter" data-target="1">0</h3>
+            <p>Active Volunteers</p>
+        </div>
+        <div class="stat-item">
+            <h3 class="counter" data-target="12">0</h3>
+            <p>Ongoing Projects</p>
+        </div>
+        <div class="stat-item">
+            <h3 class="counter" data-target="100">0</h3>
+            <p>Meals Shared</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- GALLERY SECTION -->
+<section id="gallery" class="container">
+    <h2 class="section-title">EAF Impact Gallery</h2>
+    <p>A glimpse into our events and community outreach programs.</p>
+
+    <!-- Filter Buttons -->
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All Photos</button>
+        <button class="filter-btn" data-filter="meals">Meals Shared</button>
+        <button class="filter-btn" data-filter="sports">Sportsmanship</button>
+        <button class="filter-btn" data-filter="elderly">Elderly Support</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid">
+        <!-- Item 1: Meals -->
+        <div class="gallery-item meals">
+            <img src="images/meals1.jpeg" alt="Feeding Program">
+            <div class="overlay"><span>Meals Shared</span></div>
+        </div>
+        <div class="gallery-item meals">
+            <img src="images/meals2.jpeg" alt="Feeding Program">
+            <div class="overlay"><span>Meals Shared</span></div>
+        </div>
+        <!-- Item 2: Sports -->
+        <div class="gallery-item sports">
+            <img src="images/sports1.jpeg" alt="Youth Tournament">
+            <div class="overlay"><span>Sports Events</span></div>
+        </div>
+        <div class="gallery-item sports">
+            <img src="images/sports2.jpeg" alt="Youth Tournament">
+            <div class="overlay"><span>Sports Events</span></div>
+        </div>
+        <!-- Item 3: Elderly -->
+        <div class="gallery-item elderly">
+            <img src="images/elderly.jpeg" alt="Visiting the Elderly">
+            <div class="overlay"><span>Elderly Care</span></div>
+        </div>
+        <div class="gallery-item elderly">
+            <img src="images/projects2.jpeg" alt="Visiting the Elderly">
+            <div class="overlay"><span>Elderly Care</span></div>
+        </div>
+        <!-- Add more items here following the same structure... -->
+    </div>
+
+    <!-- Lightbox Overlay (Hidden by default) -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
+</section>
+<!-- ... Founder and Footer Sections ... -->
+
 <section class="founder-section container">
     <div class="founder-flex">
         <div class="founder-image">
@@ -61,17 +196,6 @@
         </div>
     </div>
 </section>
-    <!-- Programs Grid -->
-    <section id="programs" class="bg-light">
-        <div class="container">
-            <h2>Our Programs</h2>
-            <div class="grid">
-                <div class="card"><h3>Education</h3><p>Scholarship programs for the needy.</p></div>
-                <div class="card"><h3>Health</h3><p>Medical camps and health awareness.</p></div>
-                <div class="card"><h3>Youth</h3><p>Mentorship and skill building.</p></div>
-            </div>
-        </div>
-    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="container">
@@ -80,7 +204,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Elvis Keith Amollo Foundation (EAF)</p>
+        <p>&copy; 2025 Elvis Amollo Foundation (EAF)</p>
     </footer>
 
     <!-- JS link -->
