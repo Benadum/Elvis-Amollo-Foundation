@@ -6,40 +6,37 @@
     <title>Elvis Keith Amollo Foundation | EAF</title>
     <!-- CSS link -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- Google Fonts -->
+    <!-- Google Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Only one FontAwesome link is needed -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
 
-    <header id="navbar-header">
-        <nav class="navbar">
-            <!-- Logo Section -->
-            <a href="#home" class="logo-container" id="logo-btn">
-                <img src="images/eaf_logo.png" alt="EAF Logo" class="logo-img">
-                <div class="logo-text">EAF <span>Foundation</span></div>
-            </a>
-            
-            <!-- Mobile Menu Toggle -->
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+<header id="navbar-header">
+    <nav class="navbar">
+        <a href="#home" class="logo-container" id="logo-btn">
+            <!-- Ensure logo.png is inside your images folder -->
+            <img src="images/eaf_logo.png" alt="EAF Logo" class="logo-img">
+            <div class="logo-text">EAF <span>Foundation</span></div>
+        </a>
+        
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#initiatives">Initiatives</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="javascript:void(0)" class="btn-nav-donate open-donation" data-cause="General Fund">Donate Now</a></li>
+        </ul>
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#programs">Programs</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+    </nav>
+</header>
 
-   <!-- Hero Carousel Section -->
+<!-- Hero Carousel Section -->
 <section id="home" class="hero-carousel">
-    <!-- Slide 1 -->
     <div class="carousel-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/sports1.jpeg');">
         <div class="hero-content">
             <h1>Elvis Amollo Foundation</h1>
@@ -47,8 +44,6 @@
             <a href="#about" class="btn-main">Learn Our Story</a>
         </div>
     </div>
-
-    <!-- Slide 2: Sportsmanship -->
     <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/sports2.jpeg');">
         <div class="hero-content">
             <h1>Youth Sportsmanship</h1>
@@ -56,8 +51,6 @@
             <a href="#initiatives" class="btn-main">View Our Projects</a>
         </div>
     </div>
-
-    <!-- Slide 3: Elderly Care -->
     <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/projects2.jpeg');">
         <div class="hero-content">
             <h1>Care for the Elderly</h1>
@@ -65,12 +58,8 @@
             <a href="#initiatives" class="btn-main">Support a Senior</a>
         </div>
     </div>
-
-    <!-- Carousel Nav Arrows -->
     <button class="carousel-prev">❮</button>
     <button class="carousel-next">❯</button>
-
-    <!-- Carousel Dots -->
     <div class="carousel-dots">
         <span class="dot active"></span>
         <span class="dot"></span>
@@ -78,39 +67,33 @@
     </div>
 </section>
 
-    <!-- About Section -->
-    <section id="about" class="container">
-        <h2>About EAF</h2>
-        <p>The Elvis Amollo Foundation (EAF) focuses on creating sustainable development through strategic community interventions.</p>
-    </section>
+<!-- About Section -->
+<section id="about" class="container reveal">
+    <h2>About EAF</h2>
+    <p>The Elvis Amollo Foundation (EAF) focuses on creating sustainable development through strategic community interventions.</p>
+</section>
 
-    <!-- Programs Grid -->
-    <section id="programs" class="bg-light">
-        <div class="container">
-            <h2>Our Programs</h2>
-            <div class="grid">
-                <div class="card"><h3>Sportsmanship</h3><p>Tournaments and Local games like draft.</p></div>
-                <div class="card"><h3>Elderly Support Programme</h3><p>Basic needs, Especially shelter to the elderly</p></div>
-                <div class="card"><h3>Youth</h3><p>Mentorship and skill building.</p></div>
-            </div>
+<!-- Programs Grid -->
+<section id="programs" class="bg-light reveal">
+    <div class="container">
+        <h2>Our Programs</h2>
+        <div class="grid">
+            <div class="card"><h3>Sportsmanship</h3><p>Tournaments and Local games like draft.</p></div>
+            <div class="card"><h3>Elderly Support</h3><p>Basic needs, especially shelter for the elderly.</p></div>
+            <div class="card"><h3>Youth</h3><p>Mentorship and skill building.</p></div>
         </div>
-    </section>
-
-    <!-- ... Previous Header and Hero Sections ... -->
+    </div>
+</section>
 
 <!-- WHAT WE DO SECTION (ZIGZAG DESIGN) -->
 <section id="initiatives" class="container">
     <h2 class="section-title">Our Focus Areas</h2>
-
-    <!-- Section 1: Sportsmanship -->
-    <div class="zigzag">
-        <div class="zigzag-img">
-            <img src="images/sports2.jpeg" alt="Sportsmanship">
-        </div>
+    <div class="zigzag reveal">
+        <div class="zigzag-img"><img src="images/sports2.jpeg" alt="Sportsmanship"></div>
         <div class="zigzag-text">
             <span>01. Athletics & Leadership</span>
             <h3>Youth Sportsmanship</h3>
-            <p>We believe that the field of play is the greatest classroom for life. Through our sports programs, we mentor young athletes not just to win, but to lead with integrity, teamwork, and discipline. By providing equipment and professional coaching, we keep youth engaged and healthy.</p>
+            <p>We mentor young athletes to lead with integrity, teamwork, and discipline.</p>
             <div class="active-projects">
                 <strong>Active Projects:</strong>
                 <ul>
@@ -118,18 +101,16 @@
                     <li>Community Sports Equipment Drive</li>
                 </ul>
             </div>
+            <button class="btn-impact open-donation" data-cause="Youth Sports Programs">Sponsor a Player</button>
         </div>
     </div>
 
-    <!-- Section 2: Helping the Elderly -->
-    <div class="zigzag reverse">
-        <div class="zigzag-img">
-            <img src="images/projects1.jpeg" alt="Elderly Support">
-        </div>
+    <div class="zigzag reverse reveal">
+        <div class="zigzag-img"><img src="images/projects1.jpeg" alt="Elderly Support"></div>
         <div class="zigzag-text">
             <span>02. Compassionate Care</span>
             <h3>Supporting the Elderly</h3>
-            <p>Our elders are the pillars of our community, yet they are often the most vulnerable. EAF provides direct support to the elderly through nutritional programs, home visits, and health check-ups. We ensure that no senior citizen in our reach feels forgotten or abandoned.</p>
+            <p>Our elders are the pillars of our community. EAF provides support through nutrition, housing, and health check-ups.</p>
             <div class="active-projects">
                 <strong>Active Projects:</strong>
                 <ul>
@@ -137,161 +118,127 @@
                     <li>Senior Health & Wellness Camps</li>
                 </ul>
             </div>
+            <button class="btn-impact open-donation" data-cause="Elderly Housing & Support">Support a Senior Home</button>
         </div>
     </div>
 </section>
 
-<!-- EAF IMPACT SECTION -->
-<section class="impact-section">
+<!-- IMPACT STATS SECTION -->
+<section class="impact-section reveal">
     <div class="container impact-wrapper">
-        
-        <!-- Card 1: General Impact -->
         <div class="impact-card">
             <div class="impact-icon"><i class="fas fa-users"></i></div>
             <h3 class="counter" data-target="20">0</h3>
-            <p>Total Beneficiaries Impacted</p>
+            <p>Beneficiaries Impacted</p>
         </div>
-
-        <!-- Card 2: Education -->
         <div class="impact-card">
             <div class="impact-icon"><i class="fas fa-graduation-cap"></i></div>
             <h3 class="counter" data-target="150">0</h3>
-            <p>Scholarships & Education Grants</p>
+            <p>Education Grants</p>
         </div>
-
-        <!-- Card 3: Elderly Support (Meals) -->
-<div class="impact-card">
-    <!-- 1. Ensure this ICON line is present -->
-    <div class="impact-icon"><i class="fas fa-bowl-food"></i></div> 
-    
-    <!-- 2. Change data-target to 5000 to match your actual impact -->
-    <h3 class="counter" data-target="100">0</h3>
-    
-    <p>Meals Provided To The Elderly</p>
-</div>
-
-        <!-- Card 4: Projects -->
+        <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-bowl-food"></i></div>
+            <h3 class="counter" data-target="100">0</h3>
+            <p>Meals Provided</p>
+        </div>
         <div class="impact-card">
             <div class="impact-icon"><i class="fas fa-list-check"></i></div>
             <h3 class="counter" data-target="12">0</h3>
-            <p>Active Community Projects</p>
+            <p>Active Projects</p>
         </div>
-
-        <!-- Card 5: Sportsmanship/Youth -->
         <div class="impact-card">
             <div class="impact-icon"><i class="fas fa-running"></i></div>
             <h3 class="counter" data-target="100">0</h3>
-            <p>Youth Engaged in Sports</p>
+            <p>Youth in Sports</p>
         </div>
-
     </div>
 </section>
 
-
 <!-- GALLERY SECTION -->
-<section id="gallery" class="container">
+<section id="gallery" class="container reveal">
     <h2 class="section-title">EAF Impact Gallery</h2>
-    <p>A glimpse into our events and community outreach programs.</p>
-
-    <!-- Filter Buttons -->
     <div class="filter-buttons">
         <button class="filter-btn active" data-filter="all">All Photos</button>
         <button class="filter-btn" data-filter="meals">Meals Shared</button>
         <button class="filter-btn" data-filter="sports">Sportsmanship</button>
         <button class="filter-btn" data-filter="elderly">Elderly Support</button>
     </div>
-
-    <!-- Gallery Grid -->
     <div class="gallery-grid">
-        <!-- Item 1: Meals -->
-        <div class="gallery-item meals">
-            <img src="images/meals1.jpeg" alt="Feeding Program">
-            <div class="overlay"><span>Meals Shared</span></div>
-        </div>
-        <div class="gallery-item meals">
-            <img src="images/meals2.jpeg" alt="Feeding Program">
-            <div class="overlay"><span>Meals Shared</span></div>
-        </div>
-        <!-- Item 2: Sports -->
-        <div class="gallery-item sports">
-            <img src="images/sports1.jpeg" alt="Youth Tournament">
-            <div class="overlay"><span>Sports Events</span></div>
-        </div>
-        <div class="gallery-item sports">
-            <img src="images/sports2.jpeg" alt="Youth Tournament">
-            <div class="overlay"><span>Sports Events</span></div>
-        </div>
-        <!-- Item 3: Elderly -->
-        <div class="gallery-item elderly">
-            <img src="images/elderly.jpeg" alt="Visiting the Elderly">
-            <div class="overlay"><span>Elderly Care</span></div>
-        </div>
-        <div class="gallery-item elderly">
-            <img src="images/projects2.jpeg" alt="Visiting the Elderly">
-            <div class="overlay"><span>Elderly Care</span></div>
-        </div>
-        <!-- Add more items here following the same structure... -->
+        <div class="gallery-item meals"><img src="images/meals1.jpeg" alt="Meals"><div class="overlay"><span>Meals</span></div></div>
+        <div class="gallery-item meals"><img src="images/meals2.jpeg" alt="Meals"><div class="overlay"><span>Meals</span></div></div>
+        <div class="gallery-item sports"><img src="images/sports1.jpeg" alt="Sports"><div class="overlay"><span>Sports</span></div></div>
+        <div class="gallery-item sports"><img src="images/sports2.jpeg" alt="Sports"><div class="overlay"><span>Sports</span></div></div>
+        <div class="gallery-item elderly"><img src="images/elderly.jpeg" alt="Elderly"><div class="overlay"><span>Elderly</span></div></div>
+        <div class="gallery-item elderly"><img src="images/projects2.jpeg" alt="Elderly"><div class="overlay"><span>Elderly</span></div></div>
     </div>
-
-    <!-- Lightbox Overlay (Hidden by default) -->
     <div id="lightbox" class="lightbox">
         <span class="close-lightbox">&times;</span>
         <img class="lightbox-content" id="lightbox-img">
         <div id="lightbox-caption"></div>
     </div>
 </section>
-<!-- ... Founder and Footer Sections ... -->
 
-<section class="founder-section container">
+<section class="founder-section container reveal">
     <div class="founder-flex">
-        <div class="founder-image">
-            <img src="images/ea.png" alt="Elvis Keith Amollo">
-        </div>
+        <div class="founder-image"><img src="images/ea.png" alt="Elvis Keith Amollo"></div>
         <div class="founder-text">
             <h3>A Message from the Founder</h3>
-            <p>"We started this foundation to bridge the gap between potential and opportunity. Our goal is to ensure every individual has the tools they need to succeed."</p>
+            <p>"We bridge the gap between potential and opportunity. Every individual deserves the tools they need to succeed."</p>
             <strong>- Elvis Keith Amollo</strong>
         </div>
     </div>
 </section>
 
-  <!-- PARTNERS SECTION (Logo Slider)
-<section class="partners container">
-    <h3 class="small-title">Our Partners & Supporters</h3>
-    <div class="logo-track">
-        <img src="images/partner1.png" alt="Partner">
-        <img src="images/partner2.png" alt="Partner">
-        <img src="images/partner3.png" alt="Partner">
-        <img src="images/partner4.png" alt="Partner">
-    </div>
-</section> -->
-
-<!-- TESTIMONIALS SECTION -->
-<section class="testimonials bg-light">
+<section class="testimonials bg-light reveal">
     <div class="container">
         <h2>Impact Stories</h2>
         <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <p>"The EAF sports program gave my son a sense of purpose and a community he never had before."</p>
-                <h4>- Parent of Beneficiary</h4>
-            </div>
-            <div class="testimonial-card">
-                <p>"I was struggling to get my daily meals until EAF stepped in. They are a blessing to us elderly."</p>
-                <h4>- Community Elder</h4>
-            </div>
+            <div class="testimonial-card"><p>"The EAF sports program gave my son purpose."</p><h4>- Parent</h4></div>
+            <div class="testimonial-card"><p>"EAF is a blessing to us elderly."</p><h4>- Community Elder</h4></div>
         </div>
     </div>
 </section>
 
-<!-- BACK TO TOP BUTTON -->
+<!-- DONATION MODAL -->
+<div id="donation-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Support Our Cause</h2>
+        <p>You are supporting: <strong id="selected-cause">General Fund</strong></p>
+        
+        <div class="payment-options">
+            <div class="payment-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/M-PESA_LOGO-01.svg" alt="M-Pesa">
+                <p>MPESA: <strong>+254 746589382</strong></p>
+                <p>Name: <strong>ELVIS KEITH AMOLLO</strong></p>
+            </div>
+
+            <div class="payment-card">
+                <i class="fas fa-university"></i>
+                <p>Bank Transfer</p>
+                <p>Bank: <strong>EQUITY BANK</strong></p>
+                <p>Acc: <strong>0780182716772</strong></p>
+                <p>Name: <strong>ELVIS KEITH AMOLLO</strong></p>
+                <p>Branch: <strong>SOTIK</strong></p>
+            </div>
+
+            <div class="payment-card">
+                <i class="fas fa-credit-card"></i>
+                <p>Card or PayPal</p>
+                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=keithelvis91@gmail.com&item_name=Elvis+Amollo+Foundation+Donation&currency_code=USD" target="_blank" class="btn-pay">Donate Now</a>
+            </div>
+        </div>
+        <p class="modal-note">Thank you for your kindness and support!</p>
+    </div> <!-- Modal content closed -->
+</div> <!-- Modal ID closed correctly now -->
+
 <button id="backToTop" title="Go to top">↑</button>
 
-<!-- ENHANCED FOOTER -->
 <footer>
     <div class="footer-grid container">
         <div class="footer-about">
             <div class="logo-text">EAF <span>Foundation</span></div>
-            <p>Empowering communities for a brighter, more sustainable future.</p>
+            <p>Empowering communities for a brighter future.</p>
         </div>
         <div class="footer-links">
             <h4>Quick Links</h4>
@@ -302,35 +249,21 @@
             </ul>
         </div>
         <div class="footer-social">
-    <h4>Follow Our Impact</h4>
-    <div class="social-links">
-        <a href="https://www.facebook.com/profile.php?id=100086364972724" class="social-icon" aria-label="Facebook">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://www.instagram.com/hon_elvisamollo?igsh=cGh4MTY2emxrdG5s" class="social-icon" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="#" class="social-icon" aria-label="Twitter">
-            <i class="fab fa-twitter"></i>
-        </a>
-        <a href="#" class="social-icon" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://www.tiktok.com/@eafoundation1?_r=1&_t=ZM-92T824H4yt6" class="social-icon" aria-label="TikTok">
-            <i class="fab fa-tiktok"></i>
-        </a>
-    </div>
-</div>
+            <h4>Follow Our Impact</h4>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=100086364972724" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/hon_elvisamollo" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/GOSSIPERSC22142" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/elvis-amollo-7a791228a" class="social-icon" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.tiktok.com/@eafoundation1" class="social-icon" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
     </div>
     <div class="footer-bottom">
-    <p>
-        &copy; 2025 Elvis Keith Amollo Foundation | Powered by 
-        <!-- Replace your-email@gmail.com with your actual Gmail address -->
-        <a href="mailto:infintech@osakenya.org" class="infintech-link">INFINTECH</a>
-    </p>
-</div>
+        <p>&copy; 2025 Elvis Keith Amollo Foundation | Powered by <a href="https://infintech.co.ke" target="_blank" class="infintech-link">INFINTECH</a></p>
+    </div>
 </footer>
-    <!-- JS link -->
-    <script src="javascript/script.js"></script>
+
+<script src="javascript/script.js"></script>
 </body>
 </html>

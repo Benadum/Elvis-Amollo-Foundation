@@ -7,8 +7,19 @@ header { background: #fff; position: fixed; width: 100%; top: 0; z-index: 1000; 
 .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 10%; transition: 0.3s; }
 
 /* Logo Design */
-.logo-container { display: flex; align-items: center; text-decoration: none; gap: 10px; cursor: pointer; }
-.logo-img { height: 45px; width: auto; border-radius: 4px; }
+.logo-container {
+    display: flex;
+    align-items: center; /* Vertical centering */
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+    display: block; /* Prevents alignment shifts */
+    object-fit: contain;
+}
 .logo-text { font-weight: 600; font-size: 1.2rem; color: #2c3e50; line-height: 1; }
 .logo-text span { display: block; font-size: 0.75rem; color: #27ae60; text-transform: uppercase; letter-spacing: 1px; }
 
@@ -581,4 +592,107 @@ footer { background: #1a1a1a; color: #fff; padding-top: 60px; }
     color: #ffffff; /* Turns white when hovered */
     transform: scale(1.05); /* Slight grow effect */
     text-shadow: 0 0 8px rgba(39, 174, 96, 0.6); /* Subtle glow */
+}
+
+
+/* --- Donation Buttons --- */
+.btn-nav-donate {
+    background: #27ae60;
+    color: white !important;
+    padding: 10px 20px !important;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.btn-impact {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* --- Donation Modal --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(5px);
+}
+
+/* --- Updated Donation Modal --- */
+.modal-content {
+    background: white;
+    margin: 5% auto; /* Adjusted margin to fit 3 cards better */
+    padding: 30px;
+    width: 95%;
+    max-width: 800px; /* Increased width to accommodate 3 columns */
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.payment-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.payment-card {
+    padding: 20px 10px;
+    border: 1px solid #f0f0f0;
+    border-radius: 10px;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-card i {
+    font-size: 28px;
+    color: #27ae60;
+    margin-bottom: 10px;
+}
+
+.payment-card img {
+    height: 25px;
+    margin-bottom: 10px;
+}
+
+.payment-card p {
+    font-size: 13px;
+    margin: 2px 0;
+    color: #555;
+}
+
+.payment-card strong {
+    color: #2c3e50;
+    word-break: break-all; /* Prevents long numbers from breaking the layout */
+}
+
+.modal-note {
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+}
+
+/* --- Responsive Layout for Mobile --- */
+@media (max-width: 768px) {
+    .payment-options {
+        grid-template-columns: 1fr; /* Stacks cards on top of each other on phones */
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        padding: 20px;
+    }
 }

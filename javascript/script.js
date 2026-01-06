@@ -195,3 +195,24 @@ dots.forEach((dot, idx) => {
 
 // Start the carousel
 startAutoPlay();
+
+
+// DONATION MODAL LOGIC
+const modal = document.getElementById('donation-modal');
+const closeBtn = document.querySelector('.close-modal');
+const causeText = document.getElementById('selected-cause');
+
+// Open Modal and update the cause title
+document.querySelectorAll('.open-donation').forEach(button => {
+    button.addEventListener('click', () => {
+        const cause = button.getAttribute('data-cause');
+        causeText.innerText = cause;
+        modal.style.display = 'block';
+    });
+});
+
+// Close Modal logic
+closeBtn.addEventListener('click', () => modal.style.display = 'none');
+window.addEventListener('click', (e) => {
+    if (e.target === modal) modal.style.display = 'none';
+});
