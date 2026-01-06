@@ -37,29 +37,45 @@
 
 <!-- Hero Carousel Section -->
 <section id="home" class="hero-carousel">
+    <!-- Slide 1 -->
     <div class="carousel-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/sports1.jpeg');">
         <div class="hero-content">
             <h1>Elvis Amollo Foundation</h1>
             <p>Empowering communities through education and social welfare.</p>
-            <a href="#about" class="btn-main">Learn Our Story</a>
+            <div class="hero-btns">
+                <a href="javascript:void(0)" class="btn-orange open-donation" data-cause="General Fund">DONATE</a>
+                <a href="#about" class="btn-outline">Learn Our Story</a>
+            </div>
         </div>
     </div>
+
+    <!-- Slide 2 -->
     <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/sports2.jpeg');">
         <div class="hero-content">
             <h1>Youth Sportsmanship</h1>
             <p>Mentoring the next generation of leaders through athletics.</p>
-            <a href="#initiatives" class="btn-main">View Our Projects</a>
+            <div class="hero-btns">
+                <a href="javascript:void(0)" class="btn-orange open-donation" data-cause="Youth Sports">DONATE / VOLUNTEER</a>
+                <a href="#initiatives" class="btn-outline">View Our Projects</a>
+            </div>
         </div>
     </div>
+
+    <!-- Slide 3 -->
     <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/projects2.jpeg');">
         <div class="hero-content">
             <h1>Care for the Elderly</h1>
             <p>Providing nutrition and companionship to our community pillars.</p>
-            <a href="#initiatives" class="btn-main">Support a Senior</a>
+            <div class="hero-btns">
+                <a href="javascript:void(0)" class="btn-orange open-donation" data-cause="Elderly Care">DONATE / VOLUNTEER</a>
+                <a href="#initiatives" class="btn-outline">Support a Senior</a>
+            </div>
         </div>
     </div>
+
     <button class="carousel-prev">❮</button>
     <button class="carousel-next">❯</button>
+
     <div class="carousel-dots">
         <span class="dot active"></span>
         <span class="dot"></span>
@@ -170,6 +186,8 @@
         <div class="gallery-item sports"><img src="images/sports2.jpeg" alt="Sports"><div class="overlay"><span>Sports</span></div></div>
         <div class="gallery-item elderly"><img src="images/elderly.jpeg" alt="Elderly"><div class="overlay"><span>Elderly</span></div></div>
         <div class="gallery-item elderly"><img src="images/projects2.jpeg" alt="Elderly"><div class="overlay"><span>Elderly</span></div></div>
+        <div class="gallery-item elderly"><img src="images/elderly_project1.jpeg" alt="Elderly"><div class="overlay"><span>Elderly</span></div></div>
+
     </div>
     <div id="lightbox" class="lightbox">
         <span class="close-lightbox">&times;</span>
@@ -196,6 +214,16 @@
             <div class="testimonial-card"><p>"The EAF sports program gave my son purpose."</p><h4>- Parent</h4></div>
             <div class="testimonial-card"><p>"EAF is a blessing to us elderly."</p><h4>- Community Elder</h4></div>
         </div>
+    </div>
+</section>
+<!-- CENTERED DONATION CTA -->
+<section class="cta-section reveal">
+    <div class="container">
+        <h2>Make a Difference Today</h2>
+        <p>Your support allows us to continue empowering lives through education, sports, and healthcare.</p>
+        <a href="javascript:void(0)" class="btn-big-donate open-donation" data-cause="General Fund">
+            Donate Now <i class="fas fa-heart"></i>
+        </a>
     </div>
 </section>
 
