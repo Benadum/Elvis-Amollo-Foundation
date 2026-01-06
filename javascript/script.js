@@ -172,17 +172,21 @@ const stopAutoPlay = () => {
 };
 
 // Event Listeners for Manual Controls
-nextBtn.addEventListener('click', () => {
-    stopAutoPlay();
-    nextSlide();
-    startAutoPlay();
-});
+if(nextBtn) {
+    nextBtn.addEventListener('click', () => {
+        stopAutoPlay();
+        nextSlide();
+        startAutoPlay();
+    });
+}
 
-prevBtn.addEventListener('click', () => {
-    stopAutoPlay();
-    prevSlide();
-    startAutoPlay();
-});
+if(prevBtn) {
+    prevBtn.addEventListener('click', () => {
+        stopAutoPlay();
+        prevSlide();
+        startAutoPlay();
+    });
+}
 
 // Dot Navigation
 dots.forEach((dot, idx) => {
@@ -206,13 +210,39 @@ const causeText = document.getElementById('selected-cause');
 document.querySelectorAll('.open-donation').forEach(button => {
     button.addEventListener('click', () => {
         const cause = button.getAttribute('data-cause');
-        causeText.innerText = cause;
-        modal.style.display = 'block';
+        if(causeText) causeText.innerText = cause;
+        if(modal) modal.style.display = 'block';
     });
 });
 
 // Close Modal logic
-closeBtn.addEventListener('click', () => modal.style.display = 'none');
+if(closeBtn) {
+    closeBtn.addEventListener('click', () => modal.style.display = 'none');
+}
+
 window.addEventListener('click', (e) => {
     if (e.target === modal) modal.style.display = 'none';
 });
+
+// --- CUSTOM PAYPAL DONATION LOGIC (NEW) ---
+const paypalBtn = document.getElementById('paypal-submit-btn');
+
+if (paypalBtn) {
+    paypalBtn.addEventListener('click', () => {
+        const amountInput = document.getElementById('donation-amount');
+        const amount = amountInput ? amountInput.value : 0;
+        const cause = document.getElementById('selected-cause') ? document.getElementById('selected-cause').innerText : "General Fund";
+        const paypalEmail = "keithelvis91@gmail.com";
+        
+        if (!amount || amount <= 0) {
+            alert("Please enter a valid donation amount.");
+            return;
+        }
+
+        // Construct the PayPal URL with the custom amount and cause
+        const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=${encodeURIComponent(paypalEmail)}&item_name=${encodeURIComponent("EAF Donation: " + cause)}&amount=${amount}&currency_code=USD`;
+
+        // Open PayPal in a new tab
+        window.open(paypalUrl, '_blank');
+    });
+}

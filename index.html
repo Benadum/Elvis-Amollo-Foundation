@@ -199,38 +199,62 @@
     </div>
 </section>
 
-<!-- DONATION MODAL -->
+<!-- REFINED DONATION MODAL -->
 <div id="donation-modal" class="modal">
     <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <h2>Support Our Cause</h2>
-        <p>You are supporting: <strong id="selected-cause">General Fund</strong></p>
+        <button class="close-modal">&times;</button>
         
-        <div class="payment-options">
-            <div class="payment-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/M-PESA_LOGO-01.svg" alt="M-Pesa">
-                <p>MPESA: <strong>+254 746589382</strong></p>
-                <p>Name: <strong>ELVIS KEITH AMOLLO</strong></p>
-            </div>
+        <div class="modal-header">
+            <h2>Support Our Impact</h2>
+            <p>You are supporting: <span id="selected-cause">General Fund</span></p>
+        </div>
 
-            <div class="payment-card">
-                <i class="fas fa-university"></i>
-                <p>Bank Transfer</p>
-                <p>Bank: <strong>EQUITY BANK</strong></p>
-                <p>Acc: <strong>0780182716772</strong></p>
-                <p>Name: <strong>ELVIS KEITH AMOLLO</strong></p>
-                <p>Branch: <strong>SOTIK</strong></p>
-            </div>
-
-            <div class="payment-card">
-                <i class="fas fa-credit-card"></i>
-                <p>Card or PayPal</p>
-                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=keithelvis91@gmail.com&item_name=Elvis+Amollo+Foundation+Donation&currency_code=USD" target="_blank" class="btn-pay">Donate Now</a>
+        <div class="amount-selector">
+            <label>Enter Donation Amount (USD)</label>
+            <div class="input-container">
+                <span class="currency-symbol">$</span>
+                <input type="number" id="donation-amount" value="20" min="1">
             </div>
         </div>
-        <p class="modal-note">Thank you for your kindness and support!</p>
-    </div> <!-- Modal content closed -->
-</div> <!-- Modal ID closed correctly now -->
+
+        <div class="payment-grid">
+            <!-- M-Pesa -->
+            <div class="payment-tile">
+                <div class="tile-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/M-PESA_LOGO-01.svg" alt="M-Pesa">
+                </div>
+                <div class="tile-info">
+                    <p>MPESA: <strong>+254 746589382</strong></p>
+                    <p class="small-text">Name: ELVIS KEITH AMOLLO</p>
+                </div>
+            </div>
+
+            <!-- Bank -->
+            <div class="payment-tile">
+                <div class="tile-icon">
+                    <i class="fas fa-university"></i>
+                </div>
+                <div class="tile-info">
+                    <p>Bank: <strong>EQUITY BANK</strong></p>
+                    <p class="small-text">Acc: 0780182716772</p>
+                </div>
+            </div>
+
+            <!-- PayPal -->
+            <div class="payment-tile highlight">
+                <div class="tile-icon">
+                    <i class="fab fa-paypal"></i>
+                </div>
+                <div class="tile-info">
+                    <p><strong>Card or PayPal</strong></p>
+                    <button id="paypal-submit-btn" class="tile-button">Donate Now</button>
+                </div>
+            </div>
+        </div>
+
+        <p class="modal-footer-text italic">Thank you for your kindness and support!</p>
+    </div>
+</div>
 
 <button id="backToTop" title="Go to top">↑</button>
 
